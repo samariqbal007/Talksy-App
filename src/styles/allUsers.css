@@ -1,0 +1,76 @@
+.all-users-container {
+  background-color: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.all-users-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.message {
+  text-align: center;
+  color: #00c853;
+  margin-bottom: 16px;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.user-card:hover {
+  transform: scale(1.02);
+}
+
+.user-card strong {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.user-card p {
+  font-size: 14px;
+  color: #cccccc;
+  margin-top: 4px;
+}
+
+.user-card button {
+  background-color: #00bcd4;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.user-card button:hover {
+  background-color: #0097a7;
+}

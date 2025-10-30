@@ -1,0 +1,38 @@
+.friends-container {
+  min-height: 100vh;
+  padding: 96px 20px 20px 20px; /* offset for fixed navbar */
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+}
+
+.friend-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.chat-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}

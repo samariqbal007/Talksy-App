@@ -1,0 +1,95 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body { /* use global gradient; keep center via container-specific styles */ }
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Container */
+.auth-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  backdrop-filter: blur(16px);
+  width: 90%;
+  max-width: 420px;
+  color: #fff;
+}
+
+/* Form title */
+.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Input fields */
+.auth-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.auth-input:focus {
+  outline: 2px solid rgba(255,255,255,0.25);
+  background-color: rgba(255,255,255,0.12);
+}
+
+/* Button */
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0.0);
+}
+
+.auth-button:hover { box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+
+/* Error text */
+.auth-error {
+  color: #ff4d4d;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-button {
+    font-size: 0.95rem;
+  }
+}

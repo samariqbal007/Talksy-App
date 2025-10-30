@@ -1,0 +1,84 @@
+.search-users-container {
+  min-height: 100vh;
+  padding: 96px 20px 20px 20px; /* offset for fixed navbar */
+  color: #fff;
+}
+
+.search-box {
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.search-box h2 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.search-button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0.0);
+}
+
+.search-button:hover { box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+.user-card button {
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0.0);
+}
+
+.user-card button:hover:enabled { box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+
+.user-card button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
