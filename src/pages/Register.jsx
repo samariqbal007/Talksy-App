@@ -1,50 +1,56 @@
-import React, { useState } from 'react';
-import { auth, db } from '../firebase/config';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import '../styles/auth.css';
+// src/pages/Register.jsx
+import React, { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase/config";
+import "../styles/auth.css";
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // Create new user
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
-      // Save user info in Firestore with searchKeywords
-      await setDoc(doc(db, 'users', user.uid), {
+      // Store user info in Firestore
+      await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
-        name,
         email,
-        searchKeywords: [
-          name.toLowerCase(),
-          email.toLowerCase()
-        ]
+        username,
+        friends: [],
+        createdAt: new Date(),
       });
 
-      alert('Registration successful! You can now log in.');
+      // Redirect to profile/dashboard after signup
+      navigate("/dashboard");
     } catch (err) {
       console.error(err.message);
-      setError(err.message);
+      setError("Failed to create account. Try again.");
     }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-container">
-        <form className="auth-form" onSubmit={handleRegister}>
-        <h2 className="form-title">Register</h2>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleRegister}>
+        <h2 className="form-title">Create Account</h2>
 
         <input
           type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
           className="auth-input"
         />
@@ -67,11 +73,24 @@ const Register = () => {
           className="auth-input"
         />
 
-        <button type="submit" className="auth-button">Register</button>
+        <button type="submit" className="auth-button">
+          Sign Up
+        </button>
 
         {error && <p className="auth-error">{error}</p>}
+
+        {/* 👇 New Section for Login Navigation */}
+        <div className="signup-redirect">
+          <p>Already have an account?</p>
+          <button
+            type="button"
+            className="link-button"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
+        </div>
       </form>
-      </div>
     </div>
   );
 };

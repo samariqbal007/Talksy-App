@@ -6,17 +6,36 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body { /* use global gradient; keep center via container-specific styles */ }
+/* Background stays same as before */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2b1055, #7597de);
+}
 
+/* Centered wrapper */
 .auth-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px;
+  flex-direction: column;
 }
 
-/* Container */
+/* Talksy title above container */
+.talksy-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Auth container */
 .auth-container {
   background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
@@ -44,8 +63,8 @@ body { /* use global gradient; keep center via container-specific styles */ }
   margin-bottom: 1.2rem;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.08);
-  color: #fff;
+  background-color: #fff;
+  color: #0a0202;
   font-size: 1rem;
 }
 
@@ -66,10 +85,11 @@ body { /* use global gradient; keep center via container-specific styles */ }
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 0 rgba(255,255,255,0.0);
 }
 
-.auth-button:hover { box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+.auth-button:hover {
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
 
 /* Error text */
 .auth-error {
@@ -77,6 +97,26 @@ body { /* use global gradient; keep center via container-specific styles */ }
   margin-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* Redirect links */
+.signup-redirect {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.link-button:hover {
+  color: #3730a3;
 }
 
 /* Responsive */
@@ -91,5 +131,9 @@ body { /* use global gradient; keep center via container-specific styles */ }
 
   .auth-button {
     font-size: 0.95rem;
+  }
+
+  .talksy-title {
+    font-size: 1.8rem;
   }
 }
