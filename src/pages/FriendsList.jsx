@@ -10,7 +10,7 @@ import {
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import "../styles/friendsList.css";
+import "../styles/FriendsList.css";
 
 const FriendsList = () => {
   const [friends, setFriends] = useState([]);
