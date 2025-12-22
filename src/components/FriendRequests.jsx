@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import Navbar from "../components/Navbar";
-import "../styles/friendRequests.css";
+import "../styles/FriendRequests.css";
 
 const FriendRequests = () => {
   const [requests, setRequests] = useState([]);
