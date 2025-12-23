@@ -1,8 +1,8 @@
 // src/pages/Register.jsx
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { useNavigate } from "react-router-dom"; 
 import { auth, db } from "../firebase/config";
 import "../styles/auth.css";
 
@@ -26,12 +26,16 @@ const Register = () => {
 
       // Store user info in Firestore
       await setDoc(doc(db, "users", user.uid), {
-        uid: user.uid,
-        email,
-        username,
-        friends: [],
-        createdAt: new Date(),
-      });
+  uid: user.uid,
+  email,
+  username,
+  friends: [],
+  searchKeywords: [
+    username.toLowerCase(),
+    email.toLowerCase(),
+  ],
+  createdAt: serverTimestamp(),
+});
 
       // Redirect to profile/dashboard after signup
       navigate("/dashboard");

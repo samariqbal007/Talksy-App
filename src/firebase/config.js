@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDKZftJF-cdUmDFjnwJE2D8VUHrgGCLPSw",
   authDomain: "talksy-3c0ec.firebaseapp.com",
   projectId: "talksy-3c0ec",
-  storageBucket: "talksy-3c0ec.appspot.com", // ✅ fix here: it should be .appspot.com not .app
+  storageBucket: "talksy-3c0ec.appspot.com", // 
   messagingSenderId: "602021232187",
   appId: "1:602021232187:web:c0d5d99386d494d5c0a61e"
 };
