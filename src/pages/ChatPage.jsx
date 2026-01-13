@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import { db, auth } from "../firebase/config";
 import {
@@ -13,6 +13,7 @@ import {
 
 const ChatPage = () => {
   const { friendId } = useParams();
+  const navigate = useNavigate();
 
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
@@ -134,6 +135,22 @@ const ChatPage = () => {
   =============================== */
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: 20 }}>
+      
+      {/* ⬅ Back to Home */}
+      <button
+        onClick={() => navigate("/dashboard")}
+        style={{
+          marginBottom: 12,
+          background: "transparent",
+          border: "none",
+          color: "inherit",
+          cursor: "pointer",
+          fontSize: 14,
+        }}
+      >
+        ⬅ Back to Home
+      </button>
+
       <h2>Chat</h2>
 
       {/* Messages */}
